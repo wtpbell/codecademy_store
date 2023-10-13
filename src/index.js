@@ -1,18 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './app/App';
-import reportWebVitals from './reportWebVitals';
-import store from './app/store'
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux'
+import store from './app/store.js'
+import { App } from './app/App.js';
 
+const root = createRoot(document.getElementById('root'));
+// Import the store here.
+// Pass state and dispatch props to the <App /> component.
+const render = () => {
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  root.render(
+    <App 
+      state={store.getState()}
+      dispatch={store.dispatch}
+    />)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+};
+
+render();
+
+// Subscribe render to the store.
+store.subscribe(render);
