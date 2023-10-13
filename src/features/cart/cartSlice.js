@@ -26,9 +26,9 @@ export const cartReducer = (cart = initialCart, {type, payload}) => {
             }}
         case 'cart/changeItemQuantity':{
             const {name, newQuantity} = payload;
-            const itemToUpdae = cart[name];
+            const itemToUpdate = cart[name];
             const updateItem = {
-                ...itemToUpdae,
+                ...itemToUpdate,
                 quantity: newQuantity,
             }
             return {
@@ -37,6 +37,6 @@ export const cartReducer = (cart = initialCart, {type, payload}) => {
             }}
 
         default: 
-            return
+            return cart;
     }
 }
