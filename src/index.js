@@ -1,8 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux'
-import store from './app/store.js'
+import store from './app/store.js';
 import { App } from './app/App.js';
+import './index.css';
+
 
 const root = createRoot(document.getElementById('root'));
 // Import the store here.
@@ -14,7 +16,7 @@ const render = () => {
       state={store.getState()}
       dispatch={store.dispatch}
     />)
-
+  
 };
 
 render();

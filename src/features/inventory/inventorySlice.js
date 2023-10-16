@@ -1,6 +1,6 @@
 import { inventoryData } from '../../data';
 
-export const loadDate = (data) => {
+export const loadData = (data) => {
     return {
         type: 'inventory/loadDate',
         payload: inventoryData

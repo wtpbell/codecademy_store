@@ -1,5 +1,6 @@
 import React from "react";
 import { CurrencyFilter } from "../features/currencyFilter/CurrencyFilter";
+import { Inventory } from "../features/inventory/Inventory";
 
 
 export const App = ({state, dispatch}) => {
@@ -7,7 +8,12 @@ export const App = ({state, dispatch}) => {
     <div>
       <CurrencyFilter 
         currencyFilter={state.currencyFilter} 
-        dispatch={state}
+        dispatch={dispatch}
+      />
+      <Inventory 
+        inventory = {state.inventory}
+        dispatch = {dispatch}
+        currencyFilter={state.currencyFilter} 
       />
     </div>
   )
