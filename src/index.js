@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux'
+import { StrictMode } from 'react';
 import store from './app/store.js';
 import { App } from './app/App.js';
 import './index.css';
@@ -12,10 +12,13 @@ const root = createRoot(document.getElementById('root'));
 const render = () => {
 
   root.render(
+    <StrictMode>
     <App 
       state={store.getState()}
       dispatch={store.dispatch}
-    />)
+    />
+    </StrictMode>
+    )
   
 };
 
