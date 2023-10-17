@@ -2,7 +2,7 @@ import { inventoryData } from '../../data';
 
 export const loadData = (data) => {
     return {
-        type: 'inventory/loadDate',
+        type: 'inventory/loadData',
         payload: inventoryData
     }
 }
@@ -10,7 +10,7 @@ export const loadData = (data) => {
 const initialInventory = [];
 export const inventoryReducer = (inventory = initialInventory, {type, payload}) => {
     switch (type) {
-        case 'inventory/loadDate': {
+        case 'inventory/loadData': {
             return payload
         }
         default:{

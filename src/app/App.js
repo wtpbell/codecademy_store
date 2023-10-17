@@ -8,8 +8,8 @@ export const App = ({state, dispatch}) => {
   return (
     <div>
        <SearchTerm
-        searchTerm={state.searchTerm}
-        dispatch={dispatch}
+        searchTerm = {state.searchTerm}
+        dispatch = {dispatch}
       />
 
       <CurrencyFilter 
@@ -19,8 +19,8 @@ export const App = ({state, dispatch}) => {
 
       <Inventory 
         inventory = {getFilteredItems(state.inventory, state.searchTerm)}
+        currencyFilter = {state.currencyFilter}
         dispatch = {dispatch}
-        currencyFilter={state.currencyFilter} 
       />
 
       <Cart 
@@ -33,5 +33,5 @@ export const App = ({state, dispatch}) => {
 }
 
 function getFilteredItems(items, searchTerm) {
-  return items.filter(items => items.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  return items.filter(items => items.name.toLowerCase().includes(searchTerm.toString().toLowerCase()));
 }

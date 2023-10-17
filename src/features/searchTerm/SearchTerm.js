@@ -5,16 +5,16 @@ const searchIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/
 const clearIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/clear.svg';
 
 export const SearchTerm = ({ searchTerm, dispatch }) => {
-    const [text, setText] = useState('');
+    // const [text, setText] = useState('');
 
     const handleSearchChange = e => {
-        const userInput = setText(e.target.value);
-        // console.log(setSearchTerm(userInput))
-        dispatch(setSearchTerm(userInput))
+        const userInput = e.target.value;
+        dispatch(setSearchTerm(userInput));
+
     }
 
     const handleClearSearch = () => {
-        setText('');
+        // setText('');
         dispatch(clearSearchTerm())
     }
 
@@ -26,11 +26,11 @@ export const SearchTerm = ({ searchTerm, dispatch }) => {
             <input
                 id="search"
                 type="text"
-                value={text}
+                value={searchTerm}
                 onChange={handleSearchChange}
                 placeholder="Search products"
-                />
-                {text.length > 0 && (
+            />
+                {searchTerm.length > 0 && (
                     <button
                         onClick={handleClearSearch}
                         type="button"

@@ -8,10 +8,12 @@ const store = configureStore ({
     reducer: {
         inventory: inventoryReducer,
         cart: cartReducer,
-        currentFilter: currencyFilterReducer,
+        currencyFilter: currencyFilterReducer,
         searchTerm: searchTermReducer
     }
 })
 
 export default store;
+
+
 

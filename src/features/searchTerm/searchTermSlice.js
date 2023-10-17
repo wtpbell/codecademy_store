@@ -1,10 +1,10 @@
 const initialSearchTerm = '';
 export const searchTermReducer = (state = initialSearchTerm, {type, payload}) => {
     switch(type) {
-        case 'setSearchTerm':{
+        case 'seachTerm/setSearchTerm':{
             return payload;
         }
-        case 'clearSearchTerm':{
+        case 'seachTerm/clearSearchTerm':{
             return '';
         }
         default: 
